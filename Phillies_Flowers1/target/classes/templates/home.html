@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home Page</title>
+    <div th:replace="reused_components/header :: header-css"/>
+</head>
+<body>
+<div th:replace="reused_components/header :: header"/>
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>Phillie'ss Flower Shop</h1>
+        <h2>1. Visit <a th:href="@{/admin}">Admin Login</a></h2>
+        <h2>2. Visit <a th:href="@{/customer}">Customer User Login</a></h2>
+        <h2>3. Visit <a th:href="@{/about}">Normal page</a></h2>
+    </div>
+</div>
+<div th:replace="reused_components/footer :: footer"/>
+
+</body>
+</html>
