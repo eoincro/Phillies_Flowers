@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<div th:replace="reused_components/header :: header-css" />
+</head>
+<body>
+
+	<div th:replace="reused_components/header :: header" />
+
+	<div class="container">
+		<div class="starter-template">
+			<h1>Admin page</h1>
+			
+			<h1 th:text="#{greeting}">Greeting to Change</h1>
+		<h1 th:text="#{home.title}">Greetings To Change</h1>
+		<p>
+			<a href="/?lang=fr">French</a> | <a href="/?lang=en">English</a>
+		</p>
+
+			<h1 th:inline="text">Hello
+				[[${#httpServletRequest.remoteUser}]]!</h1>
+			<form th:action="@{/logout}" method="post">
+				<input type="submit" value="Sign Out" />
+			</form>
+			<form th:action="@{/displayAllCustomers}" method="get">
+				<input type="submit" value="View All Customers" />
+			</form>
+		</div>
+	</div>
+
+	<div th:replace="reused_components/footer :: footer" />
+
+</body>
+</html>
