@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="reused_components/header :: header-css"/>
+</head>
+<body>
+
+<div th:replace="reused_components/header :: header"/>
+
+<h1>Products</h1>
+<table>
+<tr>
+<th>Product ID</th>
+<th>Order ID</th>
+<th>Quantity</th>
+<th>Price(�)</th>
+<th>Product Name</th>
+</tr>
+<tr th:each="product : ${Products}">
+<td th:text="${product.productID}">ProductID</td>
+<td th:text="${product.orderID}">Order ID</td>
+<td th:text="${product.quantity}">Quantity</td>
+<td th:text="${product.price}">Price</td>
+<td th:text="${product.productName}">Product Name</td>
+</tr>
+</table>
+
+<div th:replace="reused_components/footer :: footer"/>
+
+</body>
+</html>
