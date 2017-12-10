@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<div th:replace="reused_components/header :: header-css" />
+</head>
+<body>
+
+	<div th:replace="reused_components/header :: header" />
+
+	<div class="container">
+		<div class="starter-template">
+			<h1 th:text="#{admin.page}"></h1>
+
+			<h1 th:text="#{hello.admin}"></h1>
+			<form th:action="@{/logout}" method="post">
+				<input type="submit" value="Sign Out" />
+			</form>
+			<form th:action="@{/displayAllCustomers}" method="get">
+				<input type="submit" value="View All Customers" />
+			</form>
+		</div>
+	</div>
+
+	<div th:replace="reused_components/footer :: footer" />
+
+</body>
+</html>

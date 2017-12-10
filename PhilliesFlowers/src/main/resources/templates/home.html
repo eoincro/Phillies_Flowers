@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Home Page</title>
+<div th:replace="reused_components/header :: header-css" />
+
+</head>
+<body>
+
+	<div th:fragment="header">
+		<!-- this is header -->
+		<nav class="navbar navbar-inverse">
+			<div class="container">
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="navbar-brand"><a th:href="@{/}">Home</a></li>
+						<li class="navbar-brand"><a th:href="@{/}">Login</a></li>
+						<li class="navbar-brand"><a th:href="@{/displayAllProducts}">Products
+								Available</a></li>
+						<li class="navbar-brand"><a
+							th:href="@{/displayAllCustomerOrders}">Orders</a></li>
+						<li class="navbar-brand"><a href="?lang=en" th:text="English"></a></li>
+						<li class="navbar-brand"><a href="?lang=fr" th:text="French"></a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<div class="container">
+
+		<div class="starter-template">
+			<h1 th:text="#{home.title}">Greetings To Change</h1>
+			<h2>
+				<a th:href="@{/admin} "><h2 th:text="#{admin.login}"></h2></a>
+			</h2>
+			<h2>
+				<a th:href="@{/customer} "><h2 th:text="#{customer.login}"></h2></a>
+			</h2>
+
+
+		</div>
+	</div>
+	<div th:replace="reused_components/footer :: footer" />
+
+</body>
+</html>
